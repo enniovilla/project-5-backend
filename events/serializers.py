@@ -9,6 +9,7 @@ class EventSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    event_date = serializers.DateTimeField(format='%d %b %Y %H:%M')
     favorite_id = serializers.SerializerMethodField()
     attendance_id = serializers.SerializerMethodField()
     attendance_count = serializers.ReadOnlyField()
@@ -54,6 +55,6 @@ class EventSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
-            'title', 'description', 'event_image', 'event_date',
+            'title', 'description', 'event_date', 'event_image',
             'favorite_id', 'attendance_id', 'attendance_count', 'comments_count'
         ]
