@@ -6,7 +6,7 @@ from events.models import Event
 class Attendance(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(
-        Event, related_name='attendances', on_delete=models.CASCADE
+        Event, related_name='attendance', on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
