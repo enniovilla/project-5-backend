@@ -1,3 +1,4 @@
+from django.contrib.humanize.templatetags.humanize import naturaltime
 from rest_framework import serializers
 from .models import Comment
 
@@ -8,6 +9,8 @@ class CommentSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     event_title = serializers.SerializerMethodField()
+    created_at = serializers.SerializerMethodField()
+    updated_at = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
@@ -22,6 +25,12 @@ class CommentSerializer(serializers.ModelSerializer):
 
     def get_event_title(self, obj):
         return obj.event.title if obj.event else None
+
+    def get_created_at(self, obj):
+        return naturaltime(obj.created_at)
+
+    def get_updated_at(self, obj):
+        return naturaltime(obj.updated_at)
 
 class CommentDetailSerializer(CommentSerializer):
     event = serializers.ReadOnlyField(source='event.id')
