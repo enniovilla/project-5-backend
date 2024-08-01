@@ -13,7 +13,13 @@ class EventList(generics.ListCreateAPIView):
         comments_count=Count('comment', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+    search_fields = [
+        'owner__username',
+        'title',
+        'event_date',
     ]
     ordering_fields = [
         'attendance_count',
