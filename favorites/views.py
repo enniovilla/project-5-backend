@@ -1,3 +1,19 @@
-from django.shortcuts import render
+from rest_framework import generics, permissions
+from connectify_api.permissions import IsOwnerOrReadOnly
+from favorites.models import Favorite
+from favorites.serializers import FavoriteSerializer
 
-# Create your views here.
+
+class FavoriteList(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = FavoriteSerializer
+    queryset = Favorite.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
+class FavoriteDetail(generics.RetrieveDestroyAPIView):
+    permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = FavoriteSerializer
+    queryset = Favorite.objects.all()
