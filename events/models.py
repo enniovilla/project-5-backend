@@ -8,7 +8,7 @@ class Event(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    image = models.ImageField(
+    event_image = models.ImageField(
         upload_to='images/', default='../default_post_h52xzo', blank=True
     )
     event_date = models.DateTimeField(blank=False)
