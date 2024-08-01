@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from events.models import Event
+from favorites.models import Favorite
+from attendances.models import Attendance
 
 
 class EventSerializer(serializers.ModelSerializer):
@@ -7,6 +9,8 @@ class EventSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    favorite_id = serializers.SerializerMethodField()
+    attendance_id = serializers.SerializerMethodField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -25,10 +29,29 @@ class EventSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
 
+    def get_favorite_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            favorite = Favorite.objects.filter(
+                owner=user, event=obj
+            ).first()
+            return favorite.id if favorite else None
+        return None
+
+    def get_attendance_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            attendance = Attendance.objects.filter(
+                owner=user, event=obj
+            ).first()
+            return attendance.id if attendance else None
+        return None
+
     class Meta:
         model = Event
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
-            'title', 'description', 'event_image', 'event_date'
+            'title', 'description', 'event_image', 'event_date',
+            'favorite_id', 'attendance_id',
         ]
