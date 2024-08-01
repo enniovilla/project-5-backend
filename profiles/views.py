@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Count
 from rest_framework import generics, filters
 from connectify_api.permissions import IsOwnerOrReadOnly
@@ -15,6 +16,7 @@ class ProfileList(generics.ListAPIView):
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
+        DjangoFilterBackend,
     ]
     filterset_fields = [
         'owner__following__followed__profile',
