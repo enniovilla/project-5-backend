@@ -1,5 +1,6 @@
 asgiref==3.3.4
 cloudinary==1.33.0
+dj-rest-auth==2.1.9
 Django==3.2.4
 django-cloudinary-storage==0.3.0
 django-filter==2.4.0
