@@ -9,7 +9,7 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
     bio = models.TextField(blank=True)
-    profile_pic = models.ImageField(
+    image = models.ImageField(
         upload_to='images/', default='../default_profile_wnybpa'
     )
 
