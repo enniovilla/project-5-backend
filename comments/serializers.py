@@ -32,5 +32,6 @@ class CommentSerializer(serializers.ModelSerializer):
     def get_updated_at(self, obj):
         return naturaltime(obj.updated_at)
 
+
 class CommentDetailSerializer(CommentSerializer):
     event = serializers.ReadOnlyField(source='event.id')

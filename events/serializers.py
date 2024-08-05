@@ -56,5 +56,6 @@ class EventSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
             'title', 'description', 'event_date', 'event_image',
-            'favorite_id', 'attendance_id', 'attendance_count', 'comments_count'
+            'favorite_id', 'attendance_id', 'attendance_count',
+            'comments_count'
         ]
