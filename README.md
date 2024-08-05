@@ -2,7 +2,8 @@
 
 Welcome! This project provides the backend services and API endpoints for the connectify. platform, developed as part of my advanced frontend specialization at Code Institute.
 
-Visit the deployed API here → [connectify. API](https://connectify-api-da6695597009.herokuapp.com/)<br>
+Visit the deployed API here → [API](https://connectify-api-da6695597009.herokuapp.com/)<br>
+Visit the frontend repository here → [Frontend](https://github.com/enniovilla/project-5-frontend)
 
 ## Content
 
