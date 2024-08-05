@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 
+
 class Event(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -25,5 +26,5 @@ class Event(models.Model):
 
         if self.event_date < timezone.now():
             raise ValidationError({
-                'event_date': 'The event date cannot be in the past.'
+                'event_date': 'The event date cannot be in the past'
             })
