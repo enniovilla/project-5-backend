@@ -40,7 +40,7 @@ Nevertheless, I developed custom models, including one for "attend," and made ad
 
 ## Developer User Stories
 
-You can find the User Stories here: [GitHub Project](https://github.com/users/enniovilla/projects/9)
+You can find the User Stories here: [GitHub Project](https://github.com/users/enniovilla/projects/9).
 
 # Database Design
 
@@ -129,35 +129,35 @@ Please click [here](TESTING.md) to go to the testing document.
 ## Frameworks & Software
 
 * [Django Rest Framework](https://www.django-rest-framework.org/)
-* [PEP8 Validation](https://pypi.org/project/pep8/)
+* [PEP8 Validation](https://pep8ci.herokuapp.com/)
 * [Github](https://github.com/)
-* [Heroku](https://en.wikipedia.org/wiki/Heroku)
+* [Heroku](https://www.heroku.com/)
 * [Cloudinary](https://cloudinary.com/)
 
 [Back to top](<#content>)
 
 ## Libraries
 
-* [asgiref](https://pypi.org/project/asgiref/)
-* [cloudinary](https://pypi.org/project/cloudinary/)
-* [dj-database-url](https://pypi.org/project/dj-database-url/0.5.0/)
-* [dj-rest-auth](https://pypi.org/project/dj-rest-auth/)
-* [Django](https://pypi.org/project/Django/)
-* [django-allauth](https://pypi.org/project/django-allauth/)
-* [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/)
-* [django-cors-headers](https://pypi.org/project/django-cors-headers/)
-* [django-filter](https://pypi.org/project/django-filter/)
-* [django-rest-framework](https://pypi.org/project/djangorestframework/)
-* [djangorestframework-simplejwt](https://pypi.org/project/djangorestframework-simplejwt/)
-* [gunicorn](https://pypi.org/project/gunicorn/)
-* [oauthlib](https://pypi.org/project/oauthlib/)
-* [Pillow](https://pypi.org/project/Pillow/8.2.0/)
-* [psycopg2](https://pypi.org/project/psycopg2/)
-* [PyJWT](https://pypi.org/project/PyJWT/)
-* [python3-openid](https://pypi.org/project/python3-openid/)
-* [pytz](https://pypi.org/project/pytz/)
-* [requests-oauhlib](https://pypi.org/project/requests-oauthlib/)
-* [sqlparse](https://pypi.org/project/sqlparse/)
+* asgiref
+* cloudinary
+* dj-database-url
+* dj-rest-auth
+* Django
+* django-allauth
+* django-cloudinary-storage
+* django-cors-headers
+* django-filter
+* django-rest-framework
+* djangorestframework-simplejwt
+* gunicorn
+* oauthlib
+* Pillow
+* psycopg2
+* PyJWT
+* python3-openid
+* pytz
+* requests-oauhlib
+* sqlparse
 
 [Back to top](<#content>)
 
